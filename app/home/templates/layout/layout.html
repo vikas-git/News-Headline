@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Headlines {% block set_title %}{% endblock set_title %}</title>
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+        <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'css/element.css' %}" rel="stylesheet">
+        
+        
+    </head>
+    <body>
+        {% include 'layout/navbar.html' %}
+        {% block page_content %}{% endblock %}
+        {% include 'layout/footer.html' %}
+
+        <section id="footer_bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p> © 2013 Your Website Name. All Rights Reserved | Design by <a href="http://www.templateonweb.com">TemplateOnWeb</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="{% static 'js/jquery-2.1.1.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        {% block more_js %} {% endblock more_js %}
+        {% block javascript %}{% endblock javascript %}
+    </body>
+</html>
